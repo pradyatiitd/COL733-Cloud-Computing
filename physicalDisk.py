@@ -78,18 +78,18 @@ class Fragment:
         self.num = n
 
 class Disk:
-	id = 0
-	numBlocks = 0
-	commandList = []
-	checkPointMap = []
-	patches = []
+    commands = []
+    checkPoints = []
+    fragments = []
+    id = 0
+    numberOfBlocks = 0
 
-	def __init__(self, idname, n):
-		self.id = idname
-		self.numBlocks = n
-		self.patches = []
-		self.commandList = [("createDisk", idname, n)]
-		self.checkPointMap = []
+    def __init__(self, id, num):
+        self.id = id
+        self.commands = [("createDisk", id, num)]
+        self.numberOfBlocks = num
+        self.fragments = []
+        self.checkPoints = []
 
 
 # if __name__ == '__main__':
